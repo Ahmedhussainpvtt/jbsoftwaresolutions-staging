@@ -3,14 +3,14 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Dock from './components/Dock'
-import CursorGlow from './components/CursorGlow'
+import CursorSystem from './components/CursorSystem'
 import ScrollProgress from './components/ScrollProgress'
 import Home from './pages/Home'
+import ServicePage from './pages/ServicePage'
 import {
   About,
   Pricing,
   Contact,
-  ServicePage,
   FaqHub,
   BlogHub,
   GlossaryHub,
@@ -37,7 +37,7 @@ export default function App() {
   return (
     <>
       <ScrollProgress />
-      <CursorGlow />
+      <CursorSystem />
       <Header />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

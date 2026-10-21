@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Reveal from '../components/Reveal'
 import MagneticButton from '../components/MagneticButton'
-import { EMAIL, PRICES, SERVICES, HOME_FAQS } from '../data/site'
+import { EMAIL, PRICES, HOME_FAQS } from '../data/site'
 import { stagger, scaleIn } from '../motion'
 
 export function About() {
@@ -166,46 +166,6 @@ export function Contact() {
               <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
             </Reveal>
           </div>
-        </div>
-      </section>
-    </>
-  )
-}
-
-export function ServicePage({ slug }) {
-  const s = SERVICES.find((x) => x.slug === slug) || SERVICES[0]
-  return (
-    <>
-      <section className="page-hero service-hero">
-        <div className="container service-hero-grid">
-          <div className="service-hero-copy">
-            <Reveal className="section-kicker">Services</Reveal>
-            <Reveal as="h1">{s.title}</Reveal>
-            <Reveal as="p">{s.desc}</Reveal>
-            <div className="hero-cta" style={{ marginTop: '1.75rem' }}>
-              <MagneticButton to="/contact/" className="btn btn-primary">
-                Start a brief
-              </MagneticButton>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <motion.div
-            className="cta-band"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div>
-              <h2>Ready to talk about {s.title.toLowerCase()}?</h2>
-              <p>Share goals and constraints. We come back with a clear plan.</p>
-            </div>
-            <MagneticButton to="/contact/" className="btn btn-primary">
-              Contact JB Software Solutions
-            </MagneticButton>
-          </motion.div>
         </div>
       </section>
     </>
