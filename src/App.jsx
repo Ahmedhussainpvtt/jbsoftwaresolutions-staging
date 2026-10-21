@@ -24,23 +24,11 @@ import { pageVariants } from './motion'
 import './styles.css'
 import './motion-extras.css'
 
-function Page({ children }) {
-  return (
-    <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit">
-      {children}
-    </motion.main>
-  )
-}
-
 function ServiceRoute() {
   const { slug } = useParams()
   const clean = (slug || '').replace(/\/$/, '')
   if (!getService(clean)) return <Navigate to="/" replace />
-  return (
-    <Page>
-      <ServicePage slug={clean} />
-    </Page>
-  )
+  return <ServicePage slug={clean} />
 }
 
 export default function App() {
@@ -53,106 +41,36 @@ export default function App() {
       <CursorSystem />
       <Header />
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route
-            index
-            element={
-              <Page>
-                <Home />
-              </Page>
-            }
-          />
-          <Route
-            path="/"
-            element={
-              <Page>
-                <Home />
-              </Page>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <Page>
-                <About />
-              </Page>
-            }
-          />
-          <Route path="/about/" element={<Navigate to="/about" replace />} />
-          <Route
-            path="/pricing"
-            element={
-              <Page>
-                <Pricing />
-              </Page>
-            }
-          />
-          <Route path="/pricing/" element={<Navigate to="/pricing" replace />} />
-          <Route
-            path="/contact"
-            element={
-              <Page>
-                <Contact />
-              </Page>
-            }
-          />
-          <Route path="/contact/" element={<Navigate to="/contact" replace />} />
-          <Route
-            path="/faq"
-            element={
-              <Page>
-                <FaqHub />
-              </Page>
-            }
-          />
-          <Route path="/faq/" element={<Navigate to="/faq" replace />} />
-          <Route
-            path="/blog"
-            element={
-              <Page>
-                <BlogHub />
-              </Page>
-            }
-          />
-          <Route path="/blog/" element={<Navigate to="/blog" replace />} />
-          <Route
-            path="/glossary"
-            element={
-              <Page>
-                <GlossaryHub />
-              </Page>
-            }
-          />
-          <Route path="/glossary/" element={<Navigate to="/glossary" replace />} />
-          <Route
-            path="/privacy"
-            element={
-              <Page>
-                <Privacy />
-              </Page>
-            }
-          />
-          <Route path="/privacy/" element={<Navigate to="/privacy" replace />} />
-          <Route
-            path="/terms"
-            element={
-              <Page>
-                <Terms />
-              </Page>
-            }
-          />
-          <Route path="/terms/" element={<Navigate to="/terms" replace />} />
-          <Route path="/services/:slug" element={<ServiceRoute />} />
-          <Route path="/services/:slug/" element={<ServiceRoute />} />
-          <Route
-            path="*"
-            element={
-              <Page>
-                <NotFound />
-              </Page>
-            }
-          />
-        </Routes>
+        <motion.main
+          key={location.pathname}
+          variants={pageVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about/" element={<Navigate to="/about" replace />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/pricing/" element={<Navigate to="/pricing" replace />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact/" element={<Navigate to="/contact" replace />} />
+            <Route path="/faq" element={<FaqHub />} />
+            <Route path="/faq/" element={<Navigate to="/faq" replace />} />
+            <Route path="/blog" element={<BlogHub />} />
+            <Route path="/blog/" element={<Navigate to="/blog" replace />} />
+            <Route path="/glossary" element={<GlossaryHub />} />
+            <Route path="/glossary/" element={<Navigate to="/glossary" replace />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/privacy/" element={<Navigate to="/privacy" replace />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/terms/" element={<Navigate to="/terms" replace />} />
+            <Route path="/services/:slug" element={<ServiceRoute />} />
+            <Route path="/services/:slug/" element={<ServiceRoute />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </motion.main>
       </AnimatePresence>
       <Footer />
       <Dock />
