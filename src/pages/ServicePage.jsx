@@ -39,10 +39,10 @@ export default function ServicePage({ slug }) {
             <motion.h1 variants={fadeLeft}>{s.h1}</motion.h1>
             <motion.p variants={fadeUp}>{s.desc}</motion.p>
             <motion.div className="hero-cta" style={{ marginTop: '1.75rem' }} variants={fadeUp}>
-              <MagneticButton to="/contact/" className="btn btn-primary">
+              <MagneticButton to="/contact" className="btn btn-primary">
                 Get a project quote
               </MagneticButton>
-              <MagneticButton to="/pricing/" className="btn btn-ghost">
+              <MagneticButton to="/pricing" className="btn btn-ghost">
                 View pricing
               </MagneticButton>
             </motion.div>
@@ -104,7 +104,7 @@ export default function ServicePage({ slug }) {
             >
               <h3>{sec.cta_h3}</h3>
               <p>Share goals, links and budget range. We reply with fit, timeline and a clear quote path.</p>
-              <MagneticButton to="/contact/" className="btn btn-primary">
+              <MagneticButton to="/contact" className="btn btn-primary">
                 Start a brief
               </MagneticButton>
               <div className="service-chip-row" style={{ marginTop: '1rem' }}>
@@ -180,7 +180,7 @@ export default function ServicePage({ slug }) {
                 <h3>Next step</h3>
                 <p>
                   {s.closing.next}{' '}
-                  <Link to="/contact/">Contact us</Link>.
+                  <Link to="/contact">Contact us</Link>.
                 </p>
               </motion.article>
             </motion.div>
@@ -203,7 +203,7 @@ export default function ServicePage({ slug }) {
               <p>Share goals and constraints. We come back with a clear plan on the contact form or email.</p>
             </div>
             <div className="cta-actions">
-              <MagneticButton to="/contact/" className="btn btn-primary">
+              <MagneticButton to="/contact" className="btn btn-primary">
                 Contact JB Software Solutions
               </MagneticButton>
             </div>

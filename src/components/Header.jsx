@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { SERVICES, RESOURCES, asset } from '../data/site'
 
@@ -9,6 +9,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const loc = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -23,6 +24,12 @@ export default function Header() {
     setResourcesOpen(false)
   }, [loc.pathname])
 
+  const goHome = (e) => {
+    e.preventDefault()
+    navigate('/')
+    window.scrollTo(0, 0)
+  }
+
   return (
     <motion.header
       className={`site-header${scrolled ? ' is-scrolled' : ''}`}
@@ -31,7 +38,7 @@ export default function Header() {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container nav">
-        <Link className="logo" to="/">
+        <a className="logo" href={import.meta.env.BASE_URL || '/'} onClick={goHome}>
           <motion.img
             src={asset('logo-mark.png')}
             width="44"
@@ -43,7 +50,7 @@ export default function Header() {
           <span>
             JB Software<em>Solutions</em>
           </span>
-        </Link>
+        </a>
         <button
           className="nav-toggle"
           type="button"
@@ -79,7 +86,7 @@ export default function Header() {
                 >
                   {SERVICES.map((s) => (
                     <li key={s.slug}>
-                      <Link to={`/services/${s.slug}/`}>
+                      <Link to={`/services/${s.slug}`}>
                         <span className="nav-drop-title">{s.title}</span>
                         <span className="nav-drop-desc">{s.desc}</span>
                       </Link>
@@ -113,7 +120,7 @@ export default function Header() {
                 >
                   {RESOURCES.map((r) => (
                     <li key={r.to}>
-                      <Link to={r.to}>
+                      <Link to={r.to.replace(/\/$/, '') || '/'}>
                         <span className="nav-drop-title">{r.title}</span>
                         <span className="nav-drop-desc">{r.desc}</span>
                       </Link>
@@ -124,13 +131,13 @@ export default function Header() {
             </AnimatePresence>
           </li>
           <li>
-            <NavLink to="/pricing/">Pricing</NavLink>
+            <NavLink to="/pricing">Pricing</NavLink>
           </li>
           <li>
-            <NavLink to="/about/">About</NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <NavLink className="nav-cta" to="/contact/">
+            <NavLink className="nav-cta" to="/contact">
               Get a quote
             </NavLink>
           </li>

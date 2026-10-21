@@ -33,14 +33,14 @@ import {
 } from '../motion'
 
 const chips = [
-  ['custom software development company India', '/services/custom-software/'],
-  ['website development company India', '/services/web-development/'],
-  ['mobile app development company India', '/services/mobile-app-development/'],
-  ['SEO company India', '/services/seo-aeo-geo/'],
-  ['GEO generative engine optimization', '/services/seo-aeo-geo/'],
-  ['business workflow automation', '/services/ai-automation/'],
-  ['desktop app development', '/services/desktop-apps/'],
-  ['hire developers India', '/contact/'],
+  ['custom software development company India', '/services/custom-software'],
+  ['website development company India', '/services/web-development'],
+  ['mobile app development company India', '/services/mobile-app-development'],
+  ['SEO company India', '/services/seo-aeo-geo'],
+  ['GEO generative engine optimization', '/services/seo-aeo-geo'],
+  ['business workflow automation', '/services/ai-automation'],
+  ['desktop app development', '/services/desktop-apps'],
+  ['hire developers India', '/contact'],
 ]
 
 export default function Home() {
@@ -134,10 +134,10 @@ export default function Home() {
                 powerful digital solutions built around your business.
               </motion.p>
               <motion.div className="hero-cta" variants={fadeUp}>
-                <MagneticButton to="/contact/" className="btn btn-primary">
+                <MagneticButton to="/contact" className="btn btn-primary">
                   Get a free strategy call
                 </MagneticButton>
-                <MagneticButton to="/pricing/" className="btn btn-ghost">
+                <MagneticButton to="/pricing" className="btn btn-ghost">
                   See pricing
                 </MagneticButton>
               </motion.div>
@@ -343,7 +343,7 @@ export default function Home() {
                     </motion.div>
                   ))}
                 </div>
-                <Link className="work-link" to="/contact/">
+                <Link className="work-link" to="/contact">
                   Start a similar brief
                 </Link>
               </motion.article>
@@ -364,7 +364,7 @@ export default function Home() {
               Share goals, links and budget range. We reply with fit, timeline and a fixed or phased
               path.
             </p>
-            <MagneticButton to="/contact/" className="btn btn-primary">
+            <MagneticButton to="/contact" className="btn btn-primary">
               Talk to JB
             </MagneticButton>
           </motion.article>
@@ -434,10 +434,10 @@ export default function Home() {
             ))}
           </motion.div>
           <p style={{ marginTop: '1.5rem' }}>
-            <MagneticButton to="/pricing/" className="btn btn-primary">
+            <MagneticButton to="/pricing" className="btn btn-primary">
               See full pricing
             </MagneticButton>{' '}
-            <MagneticButton to="/contact/" className="btn btn-ghost">
+            <MagneticButton to="/contact" className="btn btn-ghost">
               Request a fixed quote
             </MagneticButton>
           </p>
@@ -521,7 +521,7 @@ export default function Home() {
             ))}
           </div>
           <p className="section-note" style={{ marginTop: '1.25rem' }}>
-            More answers: <Link to="/faq/">FAQ hub</Link>.
+            More answers: <Link to="/faq">FAQ hub</Link>.
           </p>
         </div>
       </section>
@@ -542,7 +542,7 @@ export default function Home() {
               <p>Send a short brief. We reply with fit, timeline and a clear commercial path.</p>
             </div>
             <div className="cta-actions">
-              <MagneticButton to="/contact/" className="btn btn-primary">
+              <MagneticButton to="/contact" className="btn btn-primary">
                 Contact JB Software Solutions
               </MagneticButton>
             </div>

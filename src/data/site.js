@@ -12,9 +12,9 @@ export const SERVICES = [
 ]
 
 export const RESOURCES = [
-  { to: '/blog/', title: 'Blog', desc: 'Guides on software, apps and getting found online' },
-  { to: '/glossary/', title: 'Glossary', desc: 'Plain definitions of software and SEO terms' },
-  { to: '/faq/', title: 'FAQs', desc: 'Straight answers about software, apps, SEO and pricing' },
+  { to: '/blog', title: 'Blog', desc: 'Guides on software, apps and getting found online' },
+  { to: '/glossary', title: 'Glossary', desc: 'Plain definitions of software and SEO terms' },
+  { to: '/faq', title: 'FAQs', desc: 'Straight answers about software, apps, SEO and pricing' },
 ]
 
 export const MARQUEE = [

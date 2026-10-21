@@ -18,33 +18,34 @@ export default function Footer() {
         <motion.div variants={fadeUp}>
           <strong>Build</strong>
           {SERVICES.slice(0, 4).map((s) => (
-            <Link key={s.slug} to={`/services/${s.slug}/`}>
+            <Link key={s.slug} to={`/services/${s.slug}`}>
               {s.title}
             </Link>
           ))}
         </motion.div>
         <motion.div variants={fadeUp}>
           <strong>Grow</strong>
-          <Link to="/services/seo-aeo-geo/">SEO and visibility</Link>
-          <Link to="/services/ai-automation/">Workflow automation</Link>
-          <Link to="/pricing/">Pricing</Link>
-          <Link to="/blog/">Blog</Link>
+          <Link to="/services/seo-aeo-geo">SEO and visibility</Link>
+          <Link to="/services/ai-automation">Workflow automation</Link>
+          <Link to="/pricing">Pricing</Link>
+          <Link to="/blog">Blog</Link>
         </motion.div>
         <motion.div variants={fadeUp}>
           <strong>Company</strong>
-          <Link to="/about/">About</Link>
-          <Link to="/glossary/">Glossary</Link>
-          <Link to="/faq/">FAQs</Link>
-          <Link to="/contact/">Contact us</Link>
-          <Link to="/privacy/">Privacy policy</Link>
-          <Link to="/terms/">Terms</Link>
+          <Link to="/about">About</Link>
+          <Link to="/glossary">Glossary</Link>
+          <Link to="/faq">FAQs</Link>
+          <Link to="/contact">Contact us</Link>
+          <Link to="/privacy">Privacy policy</Link>
+          <Link to="/terms">Terms</Link>
           <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </motion.div>
       </Reveal>
       <div className="container footer-bottom">
         <span>&copy; 2026 {BRAND}. All rights reserved.</span>
         <span>
-          <Link to="/privacy/">Privacy</Link> · <Link to="/terms/">Terms</Link>
+          <Link to="/privacy">Privacy</Link> · <Link to="/terms">Terms</Link> · Custom software |
+          Mobile apps | Websites | SEO | Automation
         </span>
       </div>
     </footer>

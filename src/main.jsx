@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 
 const rawBase = import.meta.env.BASE_URL || '/'
-const basename = rawBase === '/' ? undefined : rawBase.replace(/\/$/, '')
+const basename = rawBase.replace(/\/$/, '') || undefined
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

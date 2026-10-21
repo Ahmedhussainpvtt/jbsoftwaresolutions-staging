@@ -56,7 +56,7 @@ export default function Dock() {
         )}
       </AnimatePresence>
       <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.94 }}>
-        <Link className="dock-btn quote" to="/contact/" aria-label="Contact us">
+        <Link className="dock-btn quote" to="/contact" aria-label="Contact us">
           Contact
         </Link>
       </motion.div>
