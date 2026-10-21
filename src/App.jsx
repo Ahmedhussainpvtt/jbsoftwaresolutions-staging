@@ -55,6 +55,14 @@ export default function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route
+            index
+            element={
+              <Page>
+                <Home />
+              </Page>
+            }
+          />
+          <Route
             path="/"
             element={
               <Page>

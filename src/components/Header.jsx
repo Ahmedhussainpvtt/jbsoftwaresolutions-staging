@@ -24,9 +24,12 @@ export default function Header() {
     setResourcesOpen(false)
   }, [loc.pathname])
 
+  const homeHref = import.meta.env.BASE_URL || '/'
+
   const goHome = (e) => {
     e.preventDefault()
     navigate('/')
+    window.history.replaceState(null, '', homeHref)
     window.scrollTo(0, 0)
   }
 
@@ -38,7 +41,7 @@ export default function Header() {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container nav">
-        <a className="logo" href={import.meta.env.BASE_URL || '/'} onClick={goHome}>
+        <a className="logo" href={homeHref} onClick={goHome}>
           <motion.img
             src={asset('logo-mark.png')}
             width="44"
