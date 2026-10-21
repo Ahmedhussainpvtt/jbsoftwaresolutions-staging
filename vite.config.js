@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { copyFileSync, existsSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { resolve, dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const root = dirname(fileURLToPath(import.meta.url))
 
 // GitHub Pages project site: https://ahmedhussainpvtt.github.io/jbsoftwaresolutions-staging/
 export default defineConfig({
@@ -10,8 +13,8 @@ export default defineConfig({
     {
       name: 'spa-github-pages-404',
       closeBundle() {
-        const index = resolve(__dirname, 'dist/index.html')
-        const fallback = resolve(__dirname, 'dist/404.html')
+        const index = resolve(root, 'dist/index.html')
+        const fallback = resolve(root, 'dist/404.html')
         if (existsSync(index)) copyFileSync(index, fallback)
       },
     },
