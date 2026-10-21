@@ -1965,6 +1965,18 @@ html.js-ready .band-visual.is-in {
   gap: 0.85rem;
 }
 
+.faq-topic-grid > *,
+.term-grid > * {
+  display: flex;
+  height: 100%;
+}
+
+.faq-topic-grid > * > a,
+.term-grid > * > a {
+  flex: 1;
+  width: 100%;
+}
+
 .term-card,
 .faq-topic-card {
   display: grid;

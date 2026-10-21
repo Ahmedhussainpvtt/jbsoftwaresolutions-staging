@@ -323,36 +323,6 @@ export function Contact() {
   )
 }
 
-export function FaqHub() {
-  return (
-    <>
-      <section className="page-hero">
-        <div className="container">
-          <Reveal className="section-kicker">Resources</Reveal>
-          <Reveal as="h1">FAQs</Reveal>
-          <Reveal as="p">Straight answers about software, apps, SEO and pricing.</Reveal>
-        </div>
-      </section>
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container prose">
-          <Reveal as="p">
-            Full FAQ topic pages live on the production site. Staging mirrors the home FAQ set and
-            service-page FAQs with the same answers.
-          </Reveal>
-          <p>
-            <MagneticButton to="/" className="btn btn-primary">
-              Back home
-            </MagneticButton>{' '}
-            <MagneticButton to="/contact" className="btn btn-ghost">
-              Ask us directly
-            </MagneticButton>
-          </p>
-        </div>
-      </section>
-    </>
-  )
-}
-
 export function BlogHub() {
   return (
     <section className="page-hero">
@@ -360,21 +330,6 @@ export function BlogHub() {
         <Reveal className="section-kicker">Resources</Reveal>
         <Reveal as="h1">Blog</Reveal>
         <Reveal as="p">Guides on software, apps and getting found online.</Reveal>
-        <MagneticButton to="/" className="btn btn-primary" style={{ marginTop: '1rem' }}>
-          Back home
-        </MagneticButton>
-      </div>
-    </section>
-  )
-}
-
-export function GlossaryHub() {
-  return (
-    <section className="page-hero">
-      <div className="container">
-        <Reveal className="section-kicker">Resources</Reveal>
-        <Reveal as="h1">Glossary</Reveal>
-        <Reveal as="p">Plain definitions of software and SEO terms.</Reveal>
         <MagneticButton to="/" className="btn btn-primary" style={{ marginTop: '1rem' }}>
           Back home
         </MagneticButton>

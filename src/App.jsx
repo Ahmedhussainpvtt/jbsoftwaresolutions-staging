@@ -12,13 +12,13 @@ import {
   About,
   Pricing,
   Contact,
-  FaqHub,
   BlogHub,
-  GlossaryHub,
   Privacy,
   Terms,
   NotFound,
 } from './pages/SimplePage'
+import { FaqHub, FaqTopic } from './pages/FaqPages'
+import { GlossaryHub, GlossaryTerm } from './pages/GlossaryPages'
 import { getService } from './data/services'
 import { pageVariants } from './motion'
 import './styles.css'
@@ -56,10 +56,14 @@ export default function App() {
           <Route path="contact/" element={<Contact />} />
           <Route path="faq" element={<FaqHub />} />
           <Route path="faq/" element={<FaqHub />} />
+          <Route path="faq/:slug" element={<FaqTopic />} />
+          <Route path="faq/:slug/" element={<FaqTopic />} />
           <Route path="blog" element={<BlogHub />} />
           <Route path="blog/" element={<BlogHub />} />
           <Route path="glossary" element={<GlossaryHub />} />
           <Route path="glossary/" element={<GlossaryHub />} />
+          <Route path="glossary/:slug" element={<GlossaryTerm />} />
+          <Route path="glossary/:slug/" element={<GlossaryTerm />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="privacy/" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
