@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { SERVICES, RESOURCES, asset } from '../data/site'
 
@@ -9,7 +9,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const loc = useLocation()
-  const navigate = useNavigate()
+  const homeHref = import.meta.env.BASE_URL || '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -24,15 +24,6 @@ export default function Header() {
     setResourcesOpen(false)
   }, [loc.pathname])
 
-  const homeHref = import.meta.env.BASE_URL || '/'
-
-  const goHome = (e) => {
-    e.preventDefault()
-    navigate('/')
-    window.history.replaceState(null, '', homeHref)
-    window.scrollTo(0, 0)
-  }
-
   return (
     <motion.header
       className={`site-header${scrolled ? ' is-scrolled' : ''}`}
@@ -41,7 +32,7 @@ export default function Header() {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container nav">
-        <a className="logo" href={homeHref} onClick={goHome}>
+        <a className="logo" href={homeHref}>
           <motion.img
             src={asset('logo-mark.png')}
             width="44"
