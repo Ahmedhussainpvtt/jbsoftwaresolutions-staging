@@ -900,6 +900,7 @@ a.nav-cta {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  height: 100%;
   padding: 1.45rem 1.4rem 1.35rem;
   border-radius: 22px;
   border: 1px solid var(--line);

@@ -27,7 +27,6 @@ import {
   fadeLeft,
   fadeRight,
   scaleIn,
-  popIn,
   stagger,
   cardHover,
   glowPulse,
@@ -129,14 +128,6 @@ export default function Home() {
               initial="hidden"
               animate="show"
             >
-              <motion.span className="section-kicker hero-live-kicker" variants={popIn}>
-                <motion.span
-                  className="live-dot"
-                  animate={{ scale: [1, 1.35, 1], opacity: [1, 0.5, 1] }}
-                  transition={{ duration: 1.4, repeat: Infinity }}
-                />
-                Staging · React + Framer Motion
-              </motion.span>
               <HeroTitle />
               <motion.p className="hero-sub" variants={fadeUp}>
                 From custom software and mobile apps to modern websites, we turn your ideas into
@@ -470,13 +461,11 @@ export default function Home() {
             {SERVICES.map((s, i) => (
               <motion.div
                 key={s.slug}
+                className={`bento-tile${i === 0 ? ' bento-lg' : ''}${i === 4 ? ' bento-wide' : ''}`}
                 variants={scaleIn}
                 whileHover={reduce ? undefined : { y: -12, scale: 1.03, rotate: i % 2 ? 0.8 : -0.8 }}
               >
-                <Link
-                  to={`/services/${s.slug}/`}
-                  className={`bento-tile${i === 0 ? ' bento-lg' : ''}${i === 4 ? ' bento-wide' : ''}`}
-                >
+                <Link to={`/services/${s.slug}/`} className="bento-tile-link">
                   <span className="bento-num">0{i + 1}</span>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
@@ -504,8 +493,9 @@ export default function Home() {
             {chips.map(([label, to]) => (
               <motion.div
                 key={label}
-                variants={popIn}
-                whileHover={reduce ? undefined : { scale: 1.1, y: -4, rotate: [-1, 1, 0] }}
+                className="seo-chip-wrap"
+                variants={fadeUp}
+                whileHover={reduce ? undefined : { scale: 1.08, y: -3 }}
               >
                 <Link className="seo-chip" to={to}>
                   {label}

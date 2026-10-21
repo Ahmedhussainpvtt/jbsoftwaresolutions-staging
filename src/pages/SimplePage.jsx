@@ -244,7 +244,7 @@ export function BlogHub() {
       <div className="container">
         <Reveal className="section-kicker">Resources</Reveal>
         <Reveal as="h1">Blog</Reveal>
-        <Reveal as="p">Guides are on the production site. This staging build focuses on motion and shell pages.</Reveal>
+        <Reveal as="p">Guides on software, apps and getting found online. More posts coming soon.</Reveal>
         <MagneticButton to="/" className="btn btn-primary" style={{ marginTop: '1rem' }}>
           Back home
         </MagneticButton>
@@ -259,7 +259,7 @@ export function GlossaryHub() {
       <div className="container">
         <Reveal className="section-kicker">Resources</Reveal>
         <Reveal as="h1">Glossary</Reveal>
-        <Reveal as="p">Full glossary lives on production. Staging showcases the React + Framer Motion shell.</Reveal>
+        <Reveal as="p">Plain definitions of software and SEO terms. Full glossary expanding soon.</Reveal>
       </div>
     </section>
   )
@@ -272,8 +272,7 @@ export function Privacy() {
         <Reveal className="section-kicker">Legal</Reveal>
         <Reveal as="h1">Privacy policy</Reveal>
         <Reveal as="p">
-          Full privacy policy is published on the production site at jbsoftwaresolutions.com/privacy/.
-          This staging build keeps the same chrome and motion system.
+          Full privacy policy: see jbsoftwaresolutions.com/privacy/ for the complete legal text.
         </Reveal>
       </div>
     </section>
@@ -287,7 +286,7 @@ export function Terms() {
         <Reveal className="section-kicker">Legal</Reveal>
         <Reveal as="h1">Terms and conditions</Reveal>
         <Reveal as="p">
-          Full terms are on the production site. Staging is for design and animation review only.
+          Full terms: see jbsoftwaresolutions.com/terms/ for the complete legal text.
         </Reveal>
       </div>
     </section>

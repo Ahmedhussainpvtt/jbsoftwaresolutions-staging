@@ -44,7 +44,7 @@ export default function Footer() {
       <div className="container footer-bottom">
         <span>&copy; 2026 {BRAND}. All rights reserved.</span>
         <span>
-          <Link to="/privacy/">Privacy</Link> · <Link to="/terms/">Terms</Link> · Staging React build
+          <Link to="/privacy/">Privacy</Link> · <Link to="/terms/">Terms</Link>
         </span>
       </div>
     </footer>

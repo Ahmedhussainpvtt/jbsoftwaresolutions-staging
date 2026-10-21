@@ -38,7 +38,6 @@ export default function App() {
     <>
       <ScrollProgress />
       <CursorGlow />
-      <div className="staging-banner">Staging · React + Framer Motion · not production</div>
       <Header />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

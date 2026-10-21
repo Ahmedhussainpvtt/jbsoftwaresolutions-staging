@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { wordReveal, charReveal, stagger } from '../motion'
+import { wordReveal, stagger } from '../motion'
 
 function Words({ text, className = '', delay = 0 }) {
   const parts = text.split(' ')
@@ -15,6 +15,7 @@ function Words({ text, className = '', delay = 0 }) {
       {parts.map((w, i) => (
         <span
           key={`${w}-${i}`}
+          className="hero-word"
           style={{
             display: 'inline-block',
             overflow: 'hidden',
@@ -35,28 +36,6 @@ function Words({ text, className = '', delay = 0 }) {
   )
 }
 
-function Chars({ text }) {
-  return (
-    <motion.span
-      variants={stagger(0.028)}
-      initial="hidden"
-      animate="show"
-      style={{ display: 'inline-block' }}
-    >
-      {text.split('').map((c, i) => (
-        <span
-          key={`${c}-${i}`}
-          style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'top' }}
-        >
-          <motion.span style={{ display: 'inline-block' }} variants={charReveal}>
-            {c === ' ' ? '\u00A0' : c}
-          </motion.span>
-        </span>
-      ))}
-    </motion.span>
-  )
-}
-
 export default function HeroTitle() {
   const reduce = useReducedMotion()
   if (reduce) {
@@ -69,8 +48,8 @@ export default function HeroTitle() {
   return (
     <h1 className="hero-title" style={{ perspective: 1000 }}>
       <Words text="Your Vision. Our Code." />
-      <span className="grad hero-grad-pulse">
-        <Chars text="Limitless Possibilities." />
+      <span className="grad">
+        <Words text="Limitless Possibilities." delay={0.35} />
       </span>
     </h1>
   )
